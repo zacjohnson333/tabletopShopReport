@@ -1,0 +1,27 @@
+{
+  "name": "tabletopshopreport",
+  "version": "1.0.0",
+  "description": "Web app for tabletop and board game store reviews.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zacjohnson333/tabletopShopReport.git"
+  },
+  "keywords": [
+    "tabletop",
+    "board",
+    "game",
+    "store",
+    "shop",
+    "review"
+  ],
+  "author": "Zac Johnson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zacjohnson333/tabletopShopReport/issues"
+  },
+  "homepage": "https://github.com/zacjohnson333/tabletopShopReport#readme"
+}
