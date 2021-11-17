@@ -30,7 +30,12 @@ app.get('/', (req, res) => {
 app.get('/shops', async (req, res) => {
     const shops = await Shop.find({});
     res.render('shops/index', { shops });
-})
+});
+
+app.get('/shops/:id', async (req, res) => {
+    const shop = await Shop.findById(req.params.id);
+    res.render('shops/show', { shop });
+});
 
 
 app.listen(3000, () => {

@@ -13,7 +13,9 @@
     <ul>
         <% for (let shop of shops) { %>
             <li>
-                <%= shop.name %>
+                <a href="shops/<%= shop._id %> ">
+                    <%= shop.name %>
+                </a>
             </li>
             <% } %>
     </ul>
