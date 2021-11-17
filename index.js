@@ -27,11 +27,10 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.get('/makeshop', async (req, res) => {
-    const shop = new Shop({ name: 'Board Game Barrister', hours: '10am - 9pm' });
-    await shop.save();
-    res.send(shop);
-});
+app.get('/shops', async (req, res) => {
+    const shops = await Shop.find({});
+    res.render('shops/index', { shops });
+})
 
 
 app.listen(3000, () => {
