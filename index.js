@@ -22,6 +22,8 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+app.use(express.urlencoded({ extended: true }));    // Parses req.body (during POST method)
+
 
 app.get('/', (req, res) => {
     res.render('home');
@@ -30,6 +32,16 @@ app.get('/', (req, res) => {
 app.get('/shops', async (req, res) => {
     const shops = await Shop.find({});
     res.render('shops/index', { shops });
+});
+
+app.get('/shops/new', (req, res) => {
+    res.render('shops/new');
+});
+
+app.post('/shops', async (req, res) => {
+    const shop = new Shop(req.body.shop);
+    await shop.save();
+    res.redirect(`/shops/${shop._id}`);
 });
 
 app.get('/shops/:id', async (req, res) => {
