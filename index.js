@@ -64,6 +64,12 @@ app.put('/shops/:id', async (req, res) => {
     // ^ recall we use shop[name] & shop[location] so each of these are spread into the update
 });
 
+app.delete('/shops/:id', async (req, res) => {
+    const { id } = req.params;
+    await Shop.findByIdAndDelete(id);
+    res.redirect('/shops');
+})
+
 
 app.listen(3000, () => {
     console.log('Serving on port 3000');
