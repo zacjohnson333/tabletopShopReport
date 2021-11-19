@@ -1,0 +1,162 @@
+// Navigation Variables
+// $content-width: 1000px;
+$content-width: 100%;
+$breakpoint: 799px;
+$nav-height: 70px;
+$nav-background: #1B263B;
+$nav-font-color: #E0E1DD;
+$link-hover-color: #778DA9;
+$nav-font-hover-color:  #1B263B;
+
+// Outer navigation wrapper
+.navigation {
+    height: $nav-height;
+    background: $nav-background;
+    max-width: 100%;
+  }
+  
+  // Logo and branding
+  .brand {
+    position: absolute;
+    padding-left: 20px;
+    float: left;
+    line-height: $nav-height;
+    text-transform: uppercase;
+    font-size: 1.4em;
+    padding-left: 1rem;
+    a,
+    a:visited {
+      color: $nav-font-color;
+      text-decoration: none;
+    }
+  }
+  
+  // Container with no padding for navbar
+  .nav-container {
+    max-width: $content-width;
+    margin: 0 auto;
+  }
+  
+  // Navigation 
+  nav {
+    float: right;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      padding-right: 1rem;
+      li {
+        float: left;
+        position: relative;
+        padding-left: 1rem;
+        a,
+        a:visited {
+          display: block;
+          padding: 0 20px;
+          line-height: $nav-height;
+          background: $nav-background;
+          color: $nav-font-color;
+          text-decoration: none;
+          &:hover {
+            background: $link-hover-color;
+            color: $nav-font-hover-color;
+          }
+          // Dont need this as I don't have drop downs
+          &:not(:only-child):after {
+            padding-left: 4px;
+            content: ' ▾';
+          }
+        } 
+      }
+    }
+  }
+  
+  // Dropdown list binds to JS toggle event
+  .nav-dropdown {
+    position: absolute;
+    display: none;
+    z-index: 1;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Mobile navigation */
+  
+  // Binds to JS Toggle
+  .nav-mobile {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: $nav-background;
+    height: $nav-height;
+    width: $nav-height;
+  }
+  @media only screen and (max-width: 798px) {
+    // Hamburger nav visible on mobile only
+    .nav-mobile {
+      display: block;
+    }
+
+    // is the spacing ok heres? indentation I mean?
+    nav {
+     width: 100%;
+      padding: $nav-height 0 15px;
+      ul {
+        display: none;
+        li {
+          float: none;
+          a {
+            padding: 15px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+    .nav-dropdown {
+      position: static;
+    }
+  }
+  @media screen and (min-width: $breakpoint) {
+    .nav-list {
+      display: block !important;
+    }
+  }
+  #nav-toggle {
+    position: absolute;
+    left: 18px;
+    top: 22px;
+    cursor: pointer;
+    padding: 10px 35px 16px 0px;
+    span,
+    span:before,
+    span:after {
+      cursor: pointer;
+      border-radius: 1px;
+      height: 5px;
+      width: 35px;
+      background: $nav-font-color;
+      position: absolute;
+      display: block;
+      content: '';
+      transition: all 300ms ease-in-out;
+    }
+    span:before {
+      top: -10px;
+    }
+    span:after {
+      bottom: -10px;
+    }
+    &.active span {
+      background-color: transparent;
+      &:before,
+      &:after {
+        top: 0;
+      }
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
