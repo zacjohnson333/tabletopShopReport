@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const ShopSchema = new Schema({
     name: String,
+    image: String,
     location: String,
     hours: String,
     description: String,
