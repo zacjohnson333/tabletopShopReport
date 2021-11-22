@@ -13,6 +13,8 @@ $nav-font-hover-color:  #1B263B;
     height: $nav-height;
     background: $nav-background;
     max-width: 100%;
+    position: sticky;
+    top: 0;
   }
   
   // Logo and branding
