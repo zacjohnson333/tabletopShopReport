@@ -3,10 +3,10 @@
 $content-width: 100%;
 $breakpoint: 799px;
 $nav-height: 70px;
-$nav-background: #1B263B;
-$nav-font-color: #E0E1DD;
-$link-hover-color: #778DA9;
-$nav-font-hover-color:  #1B263B;
+$nav-background: #414833;
+$nav-font-color: #EDE0D4;
+$link-hover-color: #656D4A;
+$nav-font-hover-color:  #EDE0D4;
 
 // Outer navigation wrapper
 .navigation {
@@ -23,13 +23,16 @@ $nav-font-hover-color:  #1B263B;
     padding-left: 20px;
     float: left;
     line-height: $nav-height;
-    text-transform: uppercase;
-    font-size: 1.4em;
+    // text-transform: uppercase;
+    // font-size: 1.4em;
+    font-size: 2.5rem;
     padding-left: 1rem;
+    text-shadow: 2px 1px 2px black;
     a,
     a:visited {
       color: $nav-font-color;
       text-decoration: none;
+      font-family: 'UnifrakturCook', cursive;      
     }
   }
   
@@ -51,6 +54,8 @@ $nav-font-hover-color:  #1B263B;
         float: left;
         position: relative;
         padding-left: 1rem;
+        font-family: 'M PLUS 2', sans-serif;
+        font-weight: 800;
         a,
         a:visited {
           display: block;

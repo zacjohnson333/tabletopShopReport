@@ -1,9 +1,9 @@
 // Footer variables
 $footer-height: 70px;
-$footer-background: #1B263B;
-$footer-font-color: #E0E1DD;
-$link-hover-color: #778DA9;
-$nav-font-hover-color:  #1B263B;
+$footer-background: #414833;
+$footer-font-color: #EDE0D4;
+$link-hover-color: #A68A64;
+$nav-font-hover-color:  #414833;
 
 .footer {
     height: $footer-height;
@@ -14,6 +14,7 @@ $nav-font-hover-color:  #1B263B;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'M PLUS 2', sans-serif;
 }
 
 #footer-container {

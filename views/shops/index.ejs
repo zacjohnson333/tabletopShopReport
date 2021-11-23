@@ -1,14 +1,32 @@
 <% layout('layouts/boilerplate') %>
     <h1>All Tabletop Shops</h1>
-    <div>
+    <div id="newShop">
         <a href="/shops/new">Add a Tabletop Shop</a>
     </div>
-    <ul>
-        <% for (let shop of shops) { %>
-            <li>
-                <a href="shops/<%= shop._id %> ">
-                    <%= shop.name %>
-                </a>
-            </li>
-            <% } %>
-    </ul>
+    <div>
+        <ul>
+            <% for (let shop of shops) { %>
+                <li>
+                    <section class="container">
+                        <div class="shopImgContainer">
+                            <img class="shopImg" src="<%= shop.image %> " alt="">
+                        </div>
+                        <div class="shopIndex">
+                            <ul>
+                                <li>
+                                    <a href="shops/<%= shop._id %> ">
+                                        <%= shop.name %>
+                                    </a>
+                                </li>
+                                <li>
+                                    <p>
+                                        <%= shop.location %>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </li>
+                <% } %>
+        </ul>
+    </div>

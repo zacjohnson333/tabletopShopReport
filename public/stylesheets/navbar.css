@@ -1,7 +1,7 @@
 @charset "UTF-8";
 .navigation {
   height: 70px;
-  background: #1B263B;
+  background: #414833;
   max-width: 100%;
   position: -webkit-sticky;
   position: sticky;
@@ -13,15 +13,16 @@
   padding-left: 20px;
   float: left;
   line-height: 70px;
-  text-transform: uppercase;
-  font-size: 1.4em;
+  font-size: 2.5rem;
   padding-left: 1rem;
+  text-shadow: 2px 1px 2px black;
 }
 
 .brand a,
 .brand a:visited {
-  color: #E0E1DD;
+  color: #EDE0D4;
   text-decoration: none;
+  font-family: 'UnifrakturCook', cursive;
 }
 
 .nav-container {
@@ -44,6 +45,8 @@ nav ul li {
   float: left;
   position: relative;
   padding-left: 1rem;
+  font-family: 'M PLUS 2', sans-serif;
+  font-weight: 800;
 }
 
 nav ul li a,
@@ -51,15 +54,15 @@ nav ul li a:visited {
   display: block;
   padding: 0 20px;
   line-height: 70px;
-  background: #1B263B;
-  color: #E0E1DD;
+  background: #414833;
+  color: #EDE0D4;
   text-decoration: none;
 }
 
 nav ul li a:hover,
 nav ul li a:visited:hover {
-  background: #778DA9;
-  color: #1B263B;
+  background: #656D4A;
+  color: #EDE0D4;
 }
 
 nav ul li a:not(:only-child):after,
@@ -82,7 +85,7 @@ nav ul li a:visited:not(:only-child):after {
   position: absolute;
   top: 0;
   right: 0;
-  background: #1B263B;
+  background: #414833;
   height: 70px;
   width: 70px;
 }
@@ -131,7 +134,7 @@ nav ul li a:visited:not(:only-child):after {
   border-radius: 1px;
   height: 5px;
   width: 35px;
-  background: #E0E1DD;
+  background: #EDE0D4;
   position: absolute;
   display: block;
   content: '';

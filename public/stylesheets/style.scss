@@ -1,0 +1,94 @@
+$body-background: #A68A64;
+$index-background: #EDE0D4;
+$index-background-hover: #656D4a;
+$box-shadow: #7F5539;
+$text-color: #414833;
+$h1: #EDE0D4;
+$new-shop-background: #414833;
+$new-shop-background-hover: #656D4A;
+$new-shop-shadow: #414833;
+$new-shop-text: #EDE0D4;
+
+body, html{
+    margin:0;
+    padding:0;
+}
+
+body {
+  min-height: 100vh;
+  background: $body-background;
+}
+
+h1 {
+    text-align: center;
+    color: $h1;
+    text-shadow: 1px 1px 2px rgb(51, 51, 51);
+    font-family: 'UnifrakturCook', cursive;      
+
+}
+
+#newShop {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: 'M PLUS 2', sans-serif;
+    a {
+        background: $new-shop-background;
+        // border: solid;
+        padding: 0.75rem;
+        border-radius: 0.75rem;
+        box-shadow: 3px 3px 2px $new-shop-shadow;
+        text-decoration: none;
+        color: $new-shop-text;
+    }
+    a:hover {
+        background: $new-shop-background-hover;
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+.shopImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 3px 5px 5px $box-shadow;
+}
+
+.shopImgContainer {
+    grid-column: 2/3;
+    max-width: 1fr;
+}
+
+.shopIndex {
+    grid-column: 3/4;
+    padding-left: 1rem;
+    // padding-top: 1rem;
+    background: $index-background;
+    border-radius: 0.5rem;
+    box-shadow: 3px 5px 5px $box-shadow;
+    display: inline-flex;
+    align-items: center;
+    font-family: 'M PLUS 2', sans-serif;
+    font-weight: 800;
+    a {
+        padding-right: 5rem;
+        color: $text-color;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    p {
+        color: $text-color;
+    }
+}
+
+ul {
+    list-style-type: none;
+}

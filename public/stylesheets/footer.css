@@ -1,6 +1,6 @@
 .footer {
   height: 70px;
-  background: #1B263B;
+  background: #414833;
   max-width: 100%;
   position: -webkit-sticky;
   position: sticky;
@@ -14,20 +14,21 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-family: 'M PLUS 2', sans-serif;
 }
 
 #footer-container {
-  color: #E0E1DD;
+  color: #EDE0D4;
   text-align: center;
 }
 
 #footer-container a {
-  color: #E0E1DD;
+  color: #EDE0D4;
   text-decoration: none;
 }
 
 #footer-container a:hover {
-  color: #778DA9;
+  color: #A68A64;
   text-decoration: none;
 }
 /*# sourceMappingURL=footer.css.map */
