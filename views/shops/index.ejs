@@ -9,21 +9,16 @@
                 <li>
                     <section class="container">
                         <div class="shopImgContainer">
-                            <img class="shopImg" src="<%= shop.image %> " alt="">
+                            <img class="shopImg" src="<%= shop.image %>" alt="">
                         </div>
                         <div class="shopIndex">
-                            <ul>
-                                <li>
-                                    <a href="shops/<%= shop._id %> ">
-                                        <%= shop.name %>
-                                    </a>
-                                </li>
-                                <li>
-                                    <p>
-                                        <%= shop.location %>
-                                    </p>
-                                </li>
-                            </ul>
+                            <p id="shopName">
+                                <%= shop.name %>
+                            </p>
+                            <p id="shopLocation">
+                                <%= shop.location %>
+                            </p>
+                            <a id="viewShop" href="shops/<%= shop._id %>">View <%= shop.name %></a>
                         </div>
                     </section>
                 </li>

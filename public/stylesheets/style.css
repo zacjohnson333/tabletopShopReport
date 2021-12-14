@@ -84,20 +84,57 @@ h1 {
           align-items: center;
   font-family: 'M PLUS 2', sans-serif;
   font-weight: 800;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: 1fr 1fr 2fr;
+      grid-template-rows: 1fr 1fr 2fr;
 }
 
-.shopIndex a {
-  padding-right: 5rem;
-  color: black;
+.shopIndex #shopName {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+}
+
+.shopIndex #shopLocation {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  color: #707070;
+}
+
+.shopIndex #viewShop {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+  text-align: center;
+  background: #5f0f40;
+  padding: 0.25rem;
+  border-radius: 0.75rem;
   text-decoration: none;
+  color: #FB8B24;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  display: inline-block;
+  margin-bottom: 0.5rem;
 }
 
-.shopIndex a:hover {
-  text-decoration: underline;
-}
-
-.shopIndex p {
-  color: black;
+.shopIndex #viewShop:hover {
+  background: #9a031e;
+  color: white;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
 }
 
 ul {

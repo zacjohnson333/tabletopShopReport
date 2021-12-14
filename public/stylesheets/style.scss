@@ -3,11 +3,15 @@ $index-background: white;
 // $index-background-hover: #656D4a;   not using?
 $box-shadow: black;
 $text-color: black;
+$muted-text: rgb(112, 112, 112);
 $h1: #FB8B24;
 $new-shop-background: #FB8B24;
 $new-shop-background-hover: #e36414;
 $new-shop-text: #5f0f40;
 $new-shop-text-hover: white;
+$view-shop-background: #5f0f40;
+$view-shop-background-hover: #9a031e;
+$view-shop-text: #FB8B24;
 
 body, html{
     margin:0;
@@ -80,17 +84,38 @@ h1 {
     align-items: center;
     font-family: 'M PLUS 2', sans-serif;
     font-weight: 800;
-    a {
-        padding-right: 5rem;
-        color: $text-color;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 2fr;
+    #shopName {
+        grid-column: 1/4;
+        grid-row: 1/2;
+    }
+    #shopLocation {
+        grid-column: 1/4;
+        grid-row: 2/3;
+        color: $muted-text;
+    }
+    #viewShop {
+        grid-column: 1/2;
+        grid-row: 3/4;
+        text-align: center;
+        background: $view-shop-background;
+        // border: solid;
+        padding: 0.25rem;
+        border-radius: 0.75rem;
         text-decoration: none;
+        color: $view-shop-text;
+        transition: all 0.2s ease;
+        display: inline-block;
+        margin-bottom: 0.5rem;
     }
-    a:hover {
-        text-decoration: underline;
+    #viewShop:hover {
+        background: $view-shop-background-hover;
+        color: $new-shop-text-hover;
+        transform: translateY(-3px);
     }
-    p {
-        color: $text-color;
-    }
+    
 }
 
 ul {
