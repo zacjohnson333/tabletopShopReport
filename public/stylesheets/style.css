@@ -5,13 +5,13 @@ body, html {
 
 body {
   min-height: 100vh;
-  background: #A68A64;
+  background: #FEFADC;
 }
 
 h1 {
   text-align: center;
-  color: #EDE0D4;
-  text-shadow: 1px 1px 2px #333333;
+  color: #FB8B24;
+  text-shadow: 1px 1px 1px #333333;
   font-family: 'UnifrakturCook', cursive;
 }
 
@@ -22,17 +22,21 @@ h1 {
 }
 
 #newShop a {
-  background: #414833;
+  background: #FB8B24;
   padding: 0.75rem;
   border-radius: 0.75rem;
-  -webkit-box-shadow: 3px 3px 2px #414833;
-          box-shadow: 3px 3px 2px #414833;
   text-decoration: none;
-  color: #EDE0D4;
+  color: #5f0f40;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  display: inline-block;
 }
 
 #newShop a:hover {
-  background: #656D4A;
+  background: #e36414;
+  color: white;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
 }
 
 .container {
@@ -50,8 +54,10 @@ h1 {
   width: 100%;
   height: 100%;
   border-radius: 0.5rem;
-  -webkit-box-shadow: 3px 5px 5px #7F5539;
-          box-shadow: 3px 5px 5px #7F5539;
+  -webkit-box-shadow: 1px 1px 3px black;
+          box-shadow: 1px 1px 3px black;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .shopImgContainer {
@@ -66,10 +72,10 @@ h1 {
   -ms-grid-column-span: 1;
   grid-column: 3/4;
   padding-left: 1rem;
-  background: #EDE0D4;
+  background: white;
   border-radius: 0.5rem;
-  -webkit-box-shadow: 3px 5px 5px #7F5539;
-          box-shadow: 3px 5px 5px #7F5539;
+  -webkit-box-shadow: 1px 1px 3px black;
+          box-shadow: 1px 1px 3px black;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -82,7 +88,7 @@ h1 {
 
 .shopIndex a {
   padding-right: 5rem;
-  color: #414833;
+  color: black;
   text-decoration: none;
 }
 
@@ -91,7 +97,7 @@ h1 {
 }
 
 .shopIndex p {
-  color: #414833;
+  color: black;
 }
 
 ul {

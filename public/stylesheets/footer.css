@@ -1,6 +1,6 @@
 .footer {
   height: 70px;
-  background: #414833;
+  background: #9a0313;
   max-width: 100%;
   position: -webkit-sticky;
   position: sticky;
@@ -18,17 +18,20 @@
 }
 
 #footer-container {
-  color: #EDE0D4;
+  color: #fb8b24;
   text-align: center;
 }
 
 #footer-container a {
-  color: #EDE0D4;
+  color: #fb8b24;
   text-decoration: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 #footer-container a:hover {
-  color: #A68A64;
+  color: #e36414;
   text-decoration: none;
+  font-style: italic;
 }
 /*# sourceMappingURL=footer.css.map */

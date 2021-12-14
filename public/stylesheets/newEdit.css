@@ -1,0 +1,90 @@
+.newEditContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  margin-bottom: 2rem;
+}
+
+.form {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  background: white;
+  max-width: 1fr;
+  border-radius: 0.75rem;
+  padding: 1rem 3rem;
+  -webkit-box-shadow: 1px 1px 3px black;
+          box-shadow: 1px 1px 3px black;
+}
+
+form div {
+  padding-bottom: 1rem;
+}
+
+form div label {
+  display: block;
+  padding-bottom: 0.5rem;
+  font-family: 'M PLUS 2', sans-serif;
+  font-weight: 800;
+  color: black;
+}
+
+form div input {
+  width: 100%;
+}
+
+.allButton {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: 'M PLUS 2', sans-serif;
+}
+
+.allButton a {
+  background: #FB8B24;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: #5f0f40;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.allButton a:hover {
+  background: #e36414;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  color: white;
+}
+
+.submitButton {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: 'M PLUS 2', sans-serif;
+  background: #FB8B24;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  color: #5f0f40;
+  border-color: #FB8B24;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.submitButton:hover {
+  background: #e36414;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  color: white;
+}
+
+#elf-icon {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/4;
+  width: 100px;
+}
+/*# sourceMappingURL=newEdit.css.map */

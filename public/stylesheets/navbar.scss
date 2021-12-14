@@ -3,10 +3,10 @@
 $content-width: 100%;
 $breakpoint: 799px;
 $nav-height: 70px;
-$nav-background: #414833;
-$nav-font-color: #EDE0D4;
-$link-hover-color: #656D4A;
-$nav-font-hover-color:  #EDE0D4;
+$nav-background: #9a0313;
+$nav-font-color: #fb8b24;
+$link-hover-color: #E36414;
+$nav-font-hover-color:  #5F0F40;
 
 // Outer navigation wrapper
 .navigation {
@@ -64,6 +64,7 @@ $nav-font-hover-color:  #EDE0D4;
           background: $nav-background;
           color: $nav-font-color;
           text-decoration: none;
+          transition: background 0.2s ease;
           &:hover {
             background: $link-hover-color;
             color: $nav-font-hover-color;

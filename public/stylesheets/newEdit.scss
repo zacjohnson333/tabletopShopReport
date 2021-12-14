@@ -1,0 +1,86 @@
+$form-background: white;
+$button: #FB8B24;
+$button-text: #5f0f40;
+$button-hover: #e36414;
+$text-color: black;
+$button-text-hover: white;
+$form-shadow: black;
+
+.newEditContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    margin-bottom: 2rem;
+}
+
+.form {
+    grid-column: 2/3;
+    // grid-row: 1/2;
+    background: $form-background;
+    max-width: 1fr;
+    border-radius: 0.75rem;
+    padding: 1rem 3rem;
+    box-shadow: 1px 1px 3px $form-shadow;
+
+}
+
+form {
+    div {
+        padding-bottom: 1rem;
+        label {
+            display: block;
+            padding-bottom: 0.5rem;
+            font-family: 'M PLUS 2', sans-serif;
+            font-weight: 800;
+            color: $text-color;
+        }
+        input {
+            width: 100%;
+        }
+    }
+}
+
+.allButton {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: 'M PLUS 2', sans-serif;
+    a {
+        background: $button;
+        // border: solid;
+        padding: 0.75rem;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        color: $button-text;
+        transition: all 0.2s ease;
+        display: inline-block;
+    }
+    a:hover {
+        background: $button-hover;
+        transform: translateY(-3px);
+        color: $button-text-hover;
+    }
+}
+
+.submitButton {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: 'M PLUS 2', sans-serif;
+    background: $button;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    color: $button-text;
+    border-color: $button;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.submitButton:hover {
+    background: $button-hover;
+    transform: translateY(-3px);
+    color: $button-text-hover;
+}
+
+#elf-icon {
+    grid-column: 3/4;
+    width: 100px;
+}

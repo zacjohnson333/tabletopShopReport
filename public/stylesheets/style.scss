@@ -1,13 +1,13 @@
-$body-background: #A68A64;
-$index-background: #EDE0D4;
-$index-background-hover: #656D4a;
-$box-shadow: #7F5539;
-$text-color: #414833;
-$h1: #EDE0D4;
-$new-shop-background: #414833;
-$new-shop-background-hover: #656D4A;
-$new-shop-shadow: #414833;
-$new-shop-text: #EDE0D4;
+$body-background: #FEFADC;
+$index-background: white;
+// $index-background-hover: #656D4a;   not using?
+$box-shadow: black;
+$text-color: black;
+$h1: #FB8B24;
+$new-shop-background: #FB8B24;
+$new-shop-background-hover: #e36414;
+$new-shop-text: #5f0f40;
+$new-shop-text-hover: white;
 
 body, html{
     margin:0;
@@ -22,7 +22,7 @@ body {
 h1 {
     text-align: center;
     color: $h1;
-    text-shadow: 1px 1px 2px rgb(51, 51, 51);
+    text-shadow: 1px 1px 1px rgb(51, 51, 51);
     font-family: 'UnifrakturCook', cursive;      
 
 }
@@ -36,12 +36,15 @@ h1 {
         // border: solid;
         padding: 0.75rem;
         border-radius: 0.75rem;
-        box-shadow: 3px 3px 2px $new-shop-shadow;
         text-decoration: none;
         color: $new-shop-text;
+        transition: all 0.2s ease;
+        display: inline-block;
     }
     a:hover {
         background: $new-shop-background-hover;
+        color: $new-shop-text-hover;
+        transform: translateY(-3px);
     }
 }
 
@@ -57,7 +60,8 @@ h1 {
     width: 100%;
     height: 100%;
     border-radius: 0.5rem;
-    box-shadow: 3px 5px 5px $box-shadow;
+    box-shadow: 1px 1px 3px $box-shadow;
+    object-fit: cover;
 }
 
 .shopImgContainer {
@@ -71,7 +75,7 @@ h1 {
     // padding-top: 1rem;
     background: $index-background;
     border-radius: 0.5rem;
-    box-shadow: 3px 5px 5px $box-shadow;
+    box-shadow: 1px 1px 3px $box-shadow;
     display: inline-flex;
     align-items: center;
     font-family: 'M PLUS 2', sans-serif;

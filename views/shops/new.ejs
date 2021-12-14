@@ -1,13 +1,49 @@
 <% layout('layouts/boilerplate') %>
-    <form action="/shops" method="POST">
-        <div>
-            <label for="name">Shop Name</label>
-            <input type="text" id="name" name="shop[name]">
+    <h1>Add shop details</h1>
+    <div class="allButton">
+        <a href="/shops">All Shops</a>
+    </div>
+    <section class="newEditContainer">
+        <div class="form">
+            <form action="/shops" method="POST">
+                <div>
+                    <label for="name">Shop Name</label>
+                    <input type="text" id="name" name="shop[name]">
+                </div>
+                <div>
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="shop[location]">
+                </div>
+                <div>
+                    <label for="hours">Hours</label>
+                    <input type="text" id="hours" name="shop[hours]">
+                </div>
+                <div>
+                    <label for="image">Image</label>
+                    <input type="text" id="image" name="shop[image]">
+                </div>
+                <div>
+                    <label for="description">Description</label>
+                    <input type="text" id="description" name="shop[description]">
+                </div>
+                <div>
+                    <!-- make type=tel -->
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" name="shop[phone]">
+                </div>
+                <div>
+                    <!-- make dropdown menu -->
+                    <label for="features">Features</label>
+                    <input type="text" id="features" name="shop[features]">
+                </div>
+                <div>
+                    <label for="link">Link to webpage</label>
+                    <input type="text" id="link" name="shop[link]">
+                </div>
+                <button class="submitButton">Add Shop</button>
+            </form>
         </div>
-        <div>
-            <label for="location">Location</label>
-            <input type="text" id="location" name="shop[location]">
-        </div>
-        <button>Add Shop</button>
-    </form>
-    <a href="/shops">All Shops</a>
+    </section>
+
+
+    <!-- CHECK THIS LINK: https://www.reddit.com/r/webdev/comments/nm6wcl/18_cards_of_how_to_design_web_forms/ -->
