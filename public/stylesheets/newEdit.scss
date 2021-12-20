@@ -5,28 +5,42 @@ $button-hover: #e36414;
 $text-color: black;
 $button-text-hover: white;
 $form-shadow: black;
+$drag-border: #5f0f40;
+
+ 
+// .form {
+//     // grid-column: 1/2;
+//     // grid-row: 1/2;
+//     background: $form-background;
+//     max-width: 1fr;
+//     border-radius: 0.75rem;
+//     padding: 1rem 3rem;
+//     box-shadow: 1px 1px 3px $form-shadow;
+
+// }
+
+.formContainer {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+}
 
 .newEditContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    margin-bottom: 2rem;
-}
-
-.form {
     grid-column: 2/3;
-    // grid-row: 1/2;
-    background: $form-background;
-    max-width: 1fr;
-    border-radius: 0.75rem;
-    padding: 1rem 3rem;
+    grid-row: 1/2;
+    display: grid;
+    // grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+    // grid-template-rows: 1fr 2fr 3fr 1fr;
+    grid-template-rows: 125px 150px 400px 100px;
+    margin-bottom: 2rem;
+    background-color: $form-background;
     box-shadow: 1px 1px 3px $form-shadow;
-
-}
-
-form {
+    border-radius: 0.5rem; 
     div {
         padding-bottom: 1rem;
+        padding-left: 15px;
+        padding-right: 15px;
         label {
             display: block;
             padding-bottom: 0.5rem;
@@ -38,6 +52,161 @@ form {
             width: 100%;
         }
     }
+    .nameContainer {
+        grid-template-columns: 1/2;
+        grid-template-rows: 1/2;
+        padding-top: 15px;
+        max-width: 428px;
+    }
+    .infoContainer {
+        grid-template-columns: 1/2;
+        grid-template-rows: 2/3;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 25px;
+        .shopLocation{
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+        .shopNumber{
+            grid-column: 2/3;
+            grid-row: 1/2;
+        }
+        .shopHours{
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+        .shopLink{
+            grid-column: 2/3;
+            grid-row: 2/3;
+        }
+    }
+    .detailsContainer {
+        grid-template-columns: 1/2;
+        grid-template-rows: 3/4;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 3fr 1fr;     //issue arose when I changed this to 1fr 3fr
+        column-gap: 25px;
+        .shopDescription{
+            grid-column: 1/2;
+            grid-row: 1/2;
+            width: 406px;
+            textarea {
+                width: inherit;
+            }
+        }
+        .shopImage{
+            grid-column: 2/3;
+            grid-row: 1/2;
+        }
+        .shopFeatures{
+            grid-column: 1/3;
+            grid-row: 2/3;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            .optionContainer {
+                display: inline-flex;
+                align-items: center;
+                justify-content: start;
+                // height: 20px;
+                input {
+                    width: 20px;
+                }
+            }
+            #featureLabel {
+                grid-column: 1/2;
+                grid-row: 1/2;
+            }
+            #firstOption {
+                grid-column: 1/2;
+                grid-row: 2/3;
+                // background-color: yellow;
+                // display: flex;
+                // input {
+                //     width: 20px;
+                // }
+            }
+            #secondOption {
+                grid-column: 2/3;
+                grid-row: 2/3;
+            }
+            #thirdOption {
+                grid-column: 1/2;
+                grid-row: 3/4;
+            }
+            #fourthOption {
+                grid-column: 2/3;
+                grid-row: 3/4;
+            }
+            #fifthOption {
+                grid-column: 1/2;
+                grid-row: 4/5;
+            }
+            #sixthOption {
+                grid-column: 2/3;
+                grid-row: 4/5;
+            }
+        }
+    }
+    .buttonContainer {
+        grid-template-columns: 1/2;
+        grid-template-rows: 4/5;
+    }
+}
+
+.dropZone {
+    max-width: 385px;
+    height: 115px;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'M PLUS 2', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    cursor: pointer;
+    color: #cccccc;
+    border: 2px dashed $drag-border;
+    transition: all 0.2s ease;
+    &:hover {
+        background-color: #cccccc;
+        color: white;
+    }
+}
+
+.dropZoneOver {
+    border-style: solid;
+}
+
+.dropZoneInput {
+    display: none;
+}
+
+.dropZoneThumb {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #cccccc;
+    background-size: cover;
+    position: relative;
+}
+
+.dropZoneThumb::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 0;
+    color: white;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    text-align: center;
 }
 
 .allButton {
@@ -78,9 +247,4 @@ form {
     background: $button-hover;
     transform: translateY(-3px);
     color: $button-text-hover;
-}
-
-#elf-icon {
-    grid-column: 3/4;
-    width: 100px;
 }

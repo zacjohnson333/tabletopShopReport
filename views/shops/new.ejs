@@ -3,46 +3,79 @@
     <div class="allButton">
         <a href="/shops">All Shops</a>
     </div>
-    <section class="newEditContainer">
-        <div class="form">
-            <form action="/shops" method="POST">
+    <section class="formContainer">
+        <form action="/shops" method="POST" class="newEditContainer" enctype="multipart/form-data">
+            <div class="nameContainer">
                 <div>
                     <label for="name">Shop Name</label>
                     <input type="text" id="name" name="shop[name]">
                 </div>
-                <div>
+            </div>
+            <div class="infoContainer">
+                <div class="shopLocation">
                     <label for="location">Location</label>
                     <input type="text" id="location" name="shop[location]">
                 </div>
-                <div>
-                    <label for="hours">Hours</label>
-                    <input type="text" id="hours" name="shop[hours]">
-                </div>
-                <div>
-                    <label for="image">Image</label>
-                    <input type="text" id="image" name="shop[image]">
-                </div>
-                <div>
-                    <label for="description">Description</label>
-                    <input type="text" id="description" name="shop[description]">
-                </div>
-                <div>
+                <div class="shopNumber">
                     <!-- make type=tel -->
                     <label for="phone">Phone Number</label>
                     <input type="text" id="phone" name="shop[phone]">
                 </div>
-                <div>
-                    <!-- make dropdown menu -->
-                    <label for="features">Features</label>
-                    <input type="text" id="features" name="shop[features]">
+                <div class="shopHours">
+                    <label for="hours">Hours</label>
+                    <input type="text" id="hours" name="shop[hours]">
                 </div>
-                <div>
+                <div class="shopLink">
                     <label for="link">Link to webpage</label>
                     <input type="text" id="link" name="shop[link]">
                 </div>
-                <button class="submitButton">Add Shop</button>
-            </form>
-        </div>
+            </div>
+            <div class="detailsContainer">
+                <div class="shopDescription">
+                    <label for="description">Description</label>
+                    <textarea name="shop[description]" id="description" rows="10"></textarea>
+                </div>
+                <div>
+                    <label for="dropDiv">Image(s)</label>
+                    <div class="shopImage dropZone" id="dropDiv">
+                        <!-- <label for="myFile">Images</label> -->
+                        <span class="dropZonePrompt">Drop file here or click to upload</span>
+                        <input type="file" name="myFile" class="dropZoneInput" id="myFile" multiple>
+                    </div>
+                </div>
+                <div class="shopFeatures">
+                    <div id="featureLabel">
+                        <label for="">Features</label>
+                    </div>
+                    <div class="optionContainer" id="firstOption">
+                        <input type="checkbox" id="gaming" name="features" value="gaming">
+                        <label for="gaming">Open Gaming</label>
+                    </div>
+                    <div class="optionContainer" id="secondOption">
+                        <input type="checkbox" id="trade" name="features" value="trade">
+                        <label for="trade">Trade-ins</label>
+                    </div>
+                    <div class="optionContainer" id="thirdOption">
+                        <input type="checkbox" id="events" name="features" value="events">
+                        <label for="events">In-store events</label>
+                    </div>
+                    <div class="optionContainer" id="fourthOption">
+                        <input type="checkbox" id="tournaments" name="features" value="tournaments">
+                        <label for="tournaments">CCG Tournaments</label>
+                    </div>
+                    <div class="optionContainer" id="fifthOption">
+                        <input type="checkbox" id="membership" name="features" value="membership">
+                        <label for="membership">Membership program</label>
+                    </div>
+                    <div class="optionContainer" id="sixthOption">
+                        <input type="checkbox" id="food" name="features" value="food">
+                        <label for="food">Food/drinks allowed</label>
+                    </div>
+                </div>
+                <div class="buttonContainer">
+                    <button class="submitButton">Add Shop</button>
+                </div>
+        </form>
     </section>
 
 
