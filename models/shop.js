@@ -3,13 +3,13 @@ const Schema = mongoose.Schema;
 
 const ShopSchema = new Schema({
     name: String,
-    image: String,
+    image: [String],
     location: String,
     hours: String,
     description: String,
     phone: String,
     link: String,
-    features: String
+    features: [String]
 });
 
 module.exports = mongoose.model('Shop', ShopSchema);

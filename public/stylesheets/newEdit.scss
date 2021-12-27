@@ -157,6 +157,27 @@ $drag-border: #5f0f40;
     }
 }
 
+.backButton{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'M PLUS 2', sans-serif;
+    a {
+        background: $button;
+        // border: solid;
+        padding: 0.75rem;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        color: $button-text;
+        transition: all 0.2s ease;
+        display: inline-block;
+    }
+    a:hover {
+        background:$button-hover;
+        color: $button-text-hover;
+        transform: translateY(-3px);
+    }
+}
+
 .dropZone {
     max-width: 385px;
     height: 115px;

@@ -244,6 +244,30 @@
       grid-template-rows: 4/5;
 }
 
+.backButton {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'M PLUS 2', sans-serif;
+}
+
+.backButton a {
+  background: #FB8B24;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: #5f0f40;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.backButton a:hover {
+  background: #e36414;
+  color: white;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+
 .dropZone {
   max-width: 385px;
   height: 115px;
