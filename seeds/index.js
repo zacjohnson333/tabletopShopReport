@@ -29,7 +29,8 @@ const seedDB = async () => {
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna nec tincidunt praesent semper feugiat. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Amet dictum sit amet justo donec enim diam. Gravida dictum fusce ut placerat orci nulla.',
             hours: '11AM - 7PM',
             phone: '(555)555-5555',
-            features: 'New games, used games, trade-ins, Magic: The Gathering Tournaments, table space, painting classes'
+            features: 'open gaming, trade-ins, in-store events, CCG tournaments, membership program, food/drinks allowed',
+            link: 'https://boardgamegeek.com/'
         });
         await shop.save();
     }

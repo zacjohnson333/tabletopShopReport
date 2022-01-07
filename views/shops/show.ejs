@@ -2,29 +2,40 @@
     <h1>
         <%= shop.name %>
     </h1>
-    <h2>
-        <%= shop.location %>
-    </h2>
-    <img src="<%= shop.image %> " alt="">
-    <p>
-        <%= shop.description %>
-    </p>
-    <p>
-        <%= shop.phone %>
-    </p>
-    <p>
-        <%= shop.hours %>
-    </p>
-    <p>
-        <%= shop.features %>
-    </p>
-    <p> <a href="/shops/<%= shop._id %>/edit">Edit</a>
-    </p>
-    <p>
-    <form action="/shops/<%= shop._id %>?_method=DELETE" method="POST">
-        <button>Delete Shop</button>
-    </form>
-    </p>
-    <footer>
-        <a href="/shops">All Shops</a>
-    </footer>
+
+
+    <section id="showContainer">
+        <div id="detailsContainer">
+            <img src="<%= shop.image %>" alt="">
+            <p id="location" class="borderBottom">
+                <%= shop.location %>
+            </p>
+            <p id="description" class="borderBottom">
+                <%= shop.description %>
+            </p>
+            <div id="phoneHours" class="borderBottom">
+                <span id="phone">
+                    Phone: <%= shop.phone %>
+                </span>
+                <span id="hours">
+                    Hours: <%= shop.hours %>
+                </span>
+            </div>
+            <p id="features" class="borderBottom">
+                Features: <%= shop.features %>
+            </p>
+            <a id="link" href="<%= shop.link %> ">
+                <%= shop.name %> Website
+            </a>
+        </div>
+        <div id="otherContainer">
+            <p>Map and Reviews</p>
+        </div>
+        <!--This ^ will hold the map and review-->
+        <div id="buttonContainer">
+            <a id="editBtn" href="/shops/<%= shop._id %>/edit"><button>Edit Shop</button></a>
+            <form id="deleteBtn" action="/shops/<%= shop._id %>?_method=DELETE" method="POST">
+                <button>Delete Shop</button>
+            </form>
+        </div>
+    </section>
