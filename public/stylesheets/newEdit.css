@@ -118,6 +118,7 @@
       grid-template-rows: 3fr 1fr;
   -webkit-column-gap: 25px;
           column-gap: 25px;
+  padding-top: 20px;
 }
 
 .newEditContainer .detailsContainer .shopDescription {
@@ -371,5 +372,78 @@
   -webkit-transform: translateY(-3px);
           transform: translateY(-3px);
   color: white;
+}
+
+/* Client-side valdiation icons */
+.icon {
+  position: absolute;
+  visibility: hidden;
+}
+
+.nameIcons {
+  /* Find a better way to position these */
+  top: 299px;
+  right: 783px;
+}
+
+.locationIcons {
+  top: 409px;
+  right: 783px;
+}
+
+.phoneIcons {
+  top: 409px;
+  right: 329px;
+}
+
+.hoursIcons {
+  top: 478px;
+  right: 783px;
+}
+
+small {
+  position: absolute;
+  visibility: hidden;
+  font-family: 'M PLUS 2', sans-serif;
+}
+
+input {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+}
+
+textarea {
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.formControl.error input {
+  border-color: #e74c3c;
+}
+
+.formControl.error i.fa-exclamation-circle {
+  visibility: visible;
+  color: #e74c3c;
+}
+
+.formControl.error small {
+  visibility: visible;
+  color: #e74c3c;
+}
+
+.formControl.success input {
+  border-color: #2ecc71;
+}
+
+.formControl.success i.fa-check-circle {
+  visibility: visible;
+  color: #2ecc71;
+}
+
+.formControl.success small {
+  visibility: visible;
+  color: #2ecc71;
 }
 /*# sourceMappingURL=newEdit.css.map */

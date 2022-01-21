@@ -4,37 +4,50 @@
         <a href="/shops">All Shops</a>
     </div>
     <section class="formContainer">
-        <form action="/shops" method="POST" class="newEditContainer">
+        <form action="/shops" method="POST" class="newEditContainer" id="form">
             <!-- This is not allowing anything to post, because its for files? enctype="multipart/form-data" -->
             <div class="nameContainer">
-                <div>
+                <div class="formControl">
                     <label for="name">Shop Name</label>
                     <input type="text" id="name" name="shop[name]">
+                    <i class="fas fa-check-circle icon nameIcons"></i>
+                    <i class="fas fa-exclamation-circle icon nameIcons"></i>
+                    <small>Error Message</small>
                 </div>
             </div>
             <div class="infoContainer">
-                <div class="shopLocation">
+                <div class="shopLocation formControl">
                     <label for="location">Location</label>
                     <input type="text" id="location" name="shop[location]">
+                    <i class="fas fa-check-circle icon locationIcons"></i>
+                    <i class="fas fa-exclamation-circle icon locationIcons"></i>
+                    <small>Error Message</small>
                 </div>
-                <div class="shopNumber">
-                    <!-- make type=tel -->
+                <div class="shopNumber formControl">
                     <label for="phone">Phone Number</label>
-                    <input type="text" id="phone" name="shop[phone]">
+                    <input type="tel" id="phone" name="shop[phone]">
+                    <i class="fas fa-check-circle icon phoneIcons"></i>
+                    <i class="fas fa-exclamation-circle icon phoneIcons"></i>
+                    <small>Error Message</small>
                 </div>
-                <div class="shopHours">
+                <div class="shopHours formControl">
                     <label for="hours">Hours</label>
                     <input type="text" id="hours" name="shop[hours]">
+                    <i class="fas fa-check-circle icon hoursIcons"></i>
+                    <i class="fas fa-exclamation-circle icon hoursIcons"></i>
+                    <small>Error Message</small>
                 </div>
                 <div class="shopLink">
                     <label for="link">Link to webpage</label>
-                    <input type="text" id="link" name="shop[link]">
+                    <input type="url" id="link" name="shop[link]">
+                    <!--Not sure if I want client-side validation here-->
                 </div>
             </div>
             <div class="detailsContainer">
                 <div class="shopDescription">
                     <label for="description">Description</label>
                     <textarea name="shop[description]" id="description" rows="10"></textarea>
+                    <!--Not sure if I want client-side validation here-->
                 </div>
                 <div>
                     <label for="dropDiv">Image(s)</label>
@@ -47,6 +60,7 @@
                 <div class="shopFeatures">
                     <div id="featureLabel">
                         <label for="">Features</label>
+                        <!--Client-side validation for radio buttons?-->
                     </div>
                     <div class="optionContainer" id="firstOption">
                         <input type="checkbox" id="gaming" name="shop[features]" value="gaming">

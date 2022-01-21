@@ -89,6 +89,7 @@ $drag-border: #5f0f40;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 3fr 1fr;     //issue arose when I changed this to 1fr 3fr
         column-gap: 25px;
+        padding-top: 20px;
         .shopDescription{
             grid-column: 1/2;
             grid-row: 1/2;
@@ -268,4 +269,81 @@ $drag-border: #5f0f40;
     background: $button-hover;
     transform: translateY(-3px);
     color: $button-text-hover;
+}
+
+/* Client-side valdiation icons */
+// .formControl {
+//     position: relative;  messes with the navbar
+// }
+
+.icon {
+    position: absolute;
+    visibility: hidden;
+}
+
+.nameIcons {
+    /* Find a better way to position these */
+    top: 299px;
+    right: 783px;
+}
+
+.locationIcons {
+    top: 409px;
+    right: 783px;
+}
+
+.phoneIcons {
+    top: 409px;
+    right: 329px;
+}
+
+.hoursIcons {
+    top: 478px;
+    right: 783px;
+}
+
+small {
+    position: absolute;
+    visibility: hidden;
+    font-family: 'M PLUS 2', sans-serif;
+}
+
+input {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+textarea {
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.formControl.error {
+    input {
+        border-color: #e74c3c;
+    }
+    i.fa-exclamation-circle {
+        visibility: visible;
+        color: #e74c3c;
+    }
+    small {
+        visibility: visible;
+        color: #e74c3c;
+    }
+}
+
+.formControl.success {
+    input {
+        border-color: #2ecc71;
+    }
+    i.fa-check-circle {
+        visibility: visible;
+        color: #2ecc71;
+    }
+    small {
+        visibility: visible;
+        color: #2ecc71;
+    }
 }
