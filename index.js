@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');    // an engine that makes sense/parse ejs
+const catchAsync = require('./utils/catchAsync');
 const methodOverride = require('method-override');
 const Shop = require('./models/shop');
 
@@ -35,45 +36,48 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.get('/shops', async (req, res) => {
+app.get('/shops', catchAsync(async (req, res) => {
     const shops = await Shop.find({});
     res.render('shops/index', { shops });
-});
+}));
 
 app.get('/shops/new', (req, res) => {
     res.render('shops/new');
 });
 
-app.post('/shops', async (req, res) => {
+app.post('/shops', catchAsync(async (req, res, next) => {
     const shop = new Shop(req.body.shop);
     await shop.save();
     res.redirect(`/shops/${shop._id}`);
-});
+}));
 
-app.get('/shops/:id', async (req, res) => {
+app.get('/shops/:id', catchAsync(async (req, res) => {
     const shop = await Shop.findById(req.params.id);
     res.render('shops/show', { shop });
-});
+}));
 
-app.get('/shops/:id/edit', async (req, res) => {
+app.get('/shops/:id/edit', catchAsync(async (req, res) => {
     const shop = await Shop.findById(req.params.id);
     res.render('shops/edit', { shop });
 
-});
+}));
 
-app.put('/shops/:id', async (req, res) => {
+app.put('/shops/:id', catchAsync(async (req, res) => {
     const { id } = req.params;
     const shop = await Shop.findByIdAndUpdate(id, { ...req.body.shop }) // first arg is for finding, second arg is for updating
     res.redirect(`/shops/${shop._id}`);             // ^ spread operator spreads out each element of shop to be updated 
     // ^ recall we use shop[name] & shop[location] so each of these are spread into the update
-});
+}));
 
-app.delete('/shops/:id', async (req, res) => {
+app.delete('/shops/:id', catchAsync(async (req, res) => {
     const { id } = req.params;
     await Shop.findByIdAndDelete(id);
     res.redirect('/shops');
-})
+}));
 
+app.use((err, req, res, next) => {
+    res.send('There is an error afoot!');
+});
 
 app.listen(3000, () => {
     console.log('Serving on port 3000');
