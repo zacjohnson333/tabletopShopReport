@@ -1,31 +1,46 @@
 <% layout('layouts/boilerplate') %>
     <h1>Edit Shop</h1>
     <section class="formContainer">
-        <form action="/shops/<%= shop._id %>?_method=PUT" method="POST" class="newEditContainer">
+        <form action="/shops/<%= shop._id %>?_method=PUT" method="POST" class="newEditContainer" id="form">
             <!-- This is not allowing anything to post, because its for files? enctype="multipart/form-data" -->
             <div class="nameContainer">
-                <div>
+                <div class="formControl">
                     <label for="name">Shop Name</label>
                     <input type="text" id="name" name="shop[name]" value="<%= shop.name %>">
+                    <i class="fas fa-check-circle icon nameIconsEdit"></i>
+                    <i class="fas fa-exclamation-circle icon nameIconsEdit"></i>
+                    <small>Error Message</small>
                 </div>
             </div>
             <div class="infoContainer">
-                <div class="shopLocation">
+                <div class="shopLocation formControl">
                     <label for="location">Location</label>
                     <input type="text" id="location" name="shop[location]" value="<%= shop.location %>">
+                    <i class="fas fa-check-circle icon locationIconsEdit"></i>
+                    <i class="fas fa-exclamation-circle icon locationIconsEdit"></i>
+                    <small>Error Message</small>
                 </div>
-                <div class="shopNumber">
+                <div class="shopNumber formControl">
                     <!-- make type=tel -->
                     <label for="phone">Phone Number</label>
                     <input type="text" id="phone" name="shop[phone]" value="<%= shop.phone %>">
+                    <i class="fas fa-check-circle icon phoneIconsEdit"></i>
+                    <i class="fas fa-exclamation-circle icon phoneIconsEdit"></i>
+                    <small>Error Message</small>
                 </div>
-                <div class="shopHours">
+                <div class="shopHours formControl">
                     <label for="hours">Hours</label>
                     <input type="text" id="hours" name="shop[hours]" value=" <%=shop.hours %>">
+                    <i class="fas fa-check-circle icon hoursIconsEdit"></i>
+                    <i class="fas fa-exclamation-circle icon hoursIconsEdit"></i>
+                    <small>Error Message</small>
                 </div>
                 <div class="shopLink">
                     <label for="link">Link to webpage</label>
                     <input type="text" id="link" name="shop[link]" value="<%= shop.link %>">
+                    <i class="fas fa-check-circle icon nameIcons"></i>
+                    <i class="fas fa-exclamation-circle icon nameIcons"></i>
+                    <small>Error Message</small>
                 </div>
             </div>
             <div class="detailsContainer">

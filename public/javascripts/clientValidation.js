@@ -4,9 +4,9 @@ const shopLocation = document.getElementById('location');
 const shopPhone = document.getElementById('phone');
 const shopHours = document.getElementById('hours');
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    checkInputs();
+form.addEventListener('submit', (e) => {            // Added id="form" to edit page and is now stopping
+    e.preventDefault();                             // Added icons and smalls to all needed inputs and will submit if filled
+    checkInputs();                                  // Added class="formControl, was also lacking this"
     submitForm();
 });
 
