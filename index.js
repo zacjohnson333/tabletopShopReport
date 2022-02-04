@@ -3,6 +3,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');    // an engine that makes sense/parse ejs
 const catchAsync = require('./utils/catchAsync');
+const ExpressError = require('./utils/ExpressError');
 const methodOverride = require('method-override');
 const Shop = require('./models/shop');
 
@@ -46,6 +47,7 @@ app.get('/shops/new', (req, res) => {
 });
 
 app.post('/shops', catchAsync(async (req, res, next) => {
+    if (!req.body.shop) throw new ExpressError('Invaldid Shop Data', 400);
     const shop = new Shop(req.body.shop);
     await shop.save();
     res.redirect(`/shops/${shop._id}`);
@@ -75,8 +77,14 @@ app.delete('/shops/:id', catchAsync(async (req, res) => {
     res.redirect('/shops');
 }));
 
+app.all('*', (req, res, next) => {
+    next(new ExpressError('Page Not Found', 404))
+});
+
 app.use((err, req, res, next) => {
-    res.send('There is an error afoot!');
+    const { statusCode = 500 } = err;
+    if (!err.message) err.message = "Uh oh! There's an error afoot!";
+    res.status(statusCode).render('error', { err });
 });
 
 app.listen(3000, () => {
