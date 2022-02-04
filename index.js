@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');    // an engine that makes sense/parse ejs
+const { shopSchema } = require('./schemas.js');
 const catchAsync = require('./utils/catchAsync');
 const ExpressError = require('./utils/ExpressError');
 const methodOverride = require('method-override');
@@ -31,6 +32,16 @@ app.use(express.urlencoded({ extended: true }));    // Parses req.body (during P
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));       // required to access public dir
 
+// JOI Validation Middleware
+const validateShop = (req, res, next) => {
+    const { error } = shopSchema.validate(req.body);
+    if (error) {
+        const msg = error.details.map(el => el.message).join(',');
+        throw new ExpressError(msg, 400);
+    } else {
+        next();
+    }
+}
 
 
 app.get('/', (req, res) => {
@@ -46,8 +57,8 @@ app.get('/shops/new', (req, res) => {
     res.render('shops/new');
 });
 
-app.post('/shops', catchAsync(async (req, res, next) => {
-    if (!req.body.shop) throw new ExpressError('Invaldid Shop Data', 400);
+app.post('/shops', validateShop, catchAsync(async (req, res, next) => {
+    // if (!req.body.shop) throw new ExpressError('Invaldid Shop Data', 400); PROBABLY WONT NEED THIS ONCE JOI IS IN PLACE
     const shop = new Shop(req.body.shop);
     await shop.save();
     res.redirect(`/shops/${shop._id}`);
@@ -64,7 +75,7 @@ app.get('/shops/:id/edit', catchAsync(async (req, res) => {
 
 }));
 
-app.put('/shops/:id', catchAsync(async (req, res) => {
+app.put('/shops/:id', validateShop, catchAsync(async (req, res) => {
     const { id } = req.params;
     const shop = await Shop.findByIdAndUpdate(id, { ...req.body.shop }) // first arg is for finding, second arg is for updating
     res.redirect(`/shops/${shop._id}`);             // ^ spread operator spreads out each element of shop to be updated 
